@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddhi jutex creative enterprises | Premium Sustainable Textiles</title>
+    <title>Global Jute Co. | Premium Sustainable Textiles</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Lucide Icons (SVG injected via JS) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --primary: #4a5d4e; /* Deep Forest Green */
-            --secondary: #a68b6d; /* Jute Brown */
-            --accent: #d4c4ab; /* Hessian Beige */
-            --bg-light: #faf9f6; /* Paper White */
+            --primary: #4a5d4e; 
+            --secondary: #a68b6d; 
+            --accent: #d4c4ab; 
+            --bg-light: #faf9f6; 
             --text-dark: #2d2d2d;
             --text-muted: #666;
             --white: #ffffff;
@@ -35,30 +35,15 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .brand-font {
+        h1, h2, h3, h4, .brand-font {
             font-family: 'Playfair Display', serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
         }
 
         /* --- UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .section-padding {
@@ -66,14 +51,16 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            border-radius: 4px;
-            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             border: none;
-            text-align: center;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -81,23 +68,12 @@
             color: var(--white);
         }
 
-        .btn-primary:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
         .btn-outline {
-            border: 1px solid var(--primary);
+            border: 2px solid var(--primary);
             color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* --- HEADER & NAV --- */
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0;
@@ -105,14 +81,13 @@
             z-index: 1000;
             background: transparent;
             transition: var(--transition);
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 10px 0;
         }
 
         nav {
@@ -122,55 +97,43 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--primary);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
+            list-style: none;
         }
 
         .nav-links a {
             font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-dark);
             transition: var(--transition);
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--secondary);
         }
 
         .mobile-toggle {
             display: none;
             cursor: pointer;
+            color: var(--primary);
         }
 
-        /* --- PAGE CONTENT --- */
-        main {
-            padding-top: 0;
-        }
-
+        /* --- PAGES --- */
         .page {
             display: none;
-            animation: fadeIn 0.8s ease forwards;
+            animation: fadeIn 0.6s ease;
         }
 
         .page.active {
@@ -182,281 +145,231 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=2000') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
+            padding: 0 20px;
         }
 
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.9;
-        }
-
-        /* --- PRODUCT GRID --- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .product-img {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 25px;
-        }
-
-        .product-info h3 {
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-
-        .product-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .hero h1 {
+            font-size: clamp(2.2rem, 10vw, 4rem);
             margin-bottom: 20px;
         }
 
-        /* --- STATS COUNTER --- */
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* --- STATS --- */
         .stats-bar {
             background: var(--primary);
             color: var(--white);
             padding: 60px 0;
+            position: relative;
+            z-index: 5;
         }
 
-        .stats-container {
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             text-align: center;
+            gap: 20px;
         }
 
-        .stat-item h2 {
-            font-size: 2.5rem;
+        .stat-card h2 {
+            font-size: 3rem;
             margin-bottom: 5px;
         }
 
-        .stat-item p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* --- CONTACT SECTION --- */
+        .contact-home {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* --- PRODUCT DETAIL --- */
-        .detail-layout {
+        /* --- PRODUCTS --- */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .detail-img {
-            border-radius: 15px;
+        .card {
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            cursor: pointer;
         }
 
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        .spec-table td {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
         }
 
-        .spec-label {
-            font-weight: 600;
-            width: 150px;
+        .card-content {
+            padding: 20px;
         }
 
         /* --- FORMS --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
         .form-control {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 6px;
             font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(74, 93, 78, 0.1);
+            background: #f9f9f9;
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #1a1a1a;
-            color: #ccc;
-            padding: 80px 0 40px;
+            background: #111;
+            color: #999;
+            padding: 80px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-col h4 {
-            color: var(--white);
+            color: white;
             margin-bottom: 25px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
         }
 
         .footer-links li {
             margin-bottom: 12px;
         }
 
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
         .footer-links a:hover {
-            color: var(--white);
+            color: var(--secondary);
             padding-left: 5px;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            background: #333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-        }
-
         .footer-bottom {
-            border-top: 1px solid #333;
+            border-top: 1px solid #222;
             padding-top: 30px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 0.85rem;
         }
 
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 992px) {
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--white);
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 75%;
+                background: white;
                 flex-direction: column;
-                padding: 40px;
-                gap: 20px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             }
 
             .nav-links.active {
-                display: flex;
+                right: 0;
             }
 
             .mobile-toggle {
                 display: block;
-            }
-
-            .detail-layout, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
+                z-index: 1001;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-split {
+                flex-direction: column !important;
+                text-align: center;
+            }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 600px) {
             .footer-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
-            .stats-container {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
+            .hero h1 { font-size: 2.2rem; }
+            .contact-home { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <header id="mainHeader">
+    <header id="header">
         <div class="container">
             <nav>
-                <a href="#" class="logo" onclick="navigateTo('home')">
-                    <i data-lucide="leaf"></i>
-                    GLOBAL JUTE
+                <a href="#" class="logo" onclick="showPage('home')">
+                    <i data-lucide="leaf"></i> GLOBAL JUTE
                 </a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#" class="active" onclick="navigateTo('home')">Home</a></li>
-                    <li><a href="#" onclick="navigateTo('about')">About Us</a></li>
-                    <li><a href="#" onclick="navigateTo('products')">Products</a></li>
-                    <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+                <ul class="nav-links" id="menu">
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('about')">Our Story</a></li>
+                    <li><a href="#" onclick="showPage('products')">Products</a></li>
+                    <li><a href="#contact-anchor">Contact</a></li>
                 </ul>
                 <div class="mobile-toggle" onclick="toggleMenu()">
                     <i data-lucide="menu" id="menuIcon"></i>
@@ -465,516 +378,311 @@
         </div>
     </header>
 
-    <main id="app">
+    <main>
         <!-- HOME PAGE -->
-        <section id="page-home" class="page active">
+        <section id="home" class="page active">
             <div class="hero">
-                <div class="hero-content container">
-                    <h1>Sustainably Sourced.<br>Finely Crafted Jute.</h1>
-                    <p>Leading the global transition to eco-friendly textiles with premium grade jute fibers and finished products.</p>
-                    <div style="display: flex; gap: 15px; justify-content: center;">
-                        <button class="btn btn-primary" onclick="navigateTo('products')">View Collection</button>
-                        <button class="btn btn-outline" style="border-color: white; color: white;" onclick="navigateTo('contact')">Enquire Now</button>
+                <div class="container">
+                    <h1>Sustainable Excellence in Jute Manufacturing</h1>
+                    <p>India's leading manufacturer of high-quality jute textiles, exporting eco-friendly solutions globally.</p>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary" onclick="showPage('products')">Explore Products</a>
+                        <a href="#contact-anchor" class="btn btn-outline" style="color: white; border-color: white;">Get Quote</a>
                     </div>
                 </div>
             </div>
 
-            <section class="section-padding">
-                <div class="container">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                        <div>
-                            <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Our Heritage</span>
-                            <h2 style="font-size: 2.8rem; margin: 15px 0 25px;">Decades of Excellence in Natural Fiber</h2>
-                            <p style="color: var(--text-muted); margin-bottom: 25px;">Founded on the principles of sustainability and quality, Global Jute has evolved from a local spinning unit to a world-class manufacturing hub. We pride ourselves on our zero-waste manufacturing process and our commitment to the farming communities.</p>
-                            <button class="btn btn-outline" onclick="navigateTo('about')">Learn Our Story</button>
-                        </div>
-                        <div style="position: relative;">
-                            <img src="https://images.unsplash.com/photo-1590736962234-45305149463c?auto=format&fit=crop&q=80&w=800" alt="About Jute" style="border-radius: 12px;">
-                            <div style="position: absolute; bottom: -20px; right: -20px; background: var(--accent); padding: 30px; border-radius: 12px; width: 200px;">
-                                <h3 style="font-size: 2.5rem; color: var(--primary);">25+</h3>
-                                <p style="font-size: 0.8rem; font-weight: 600;">Years of Industry Experience</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <!-- STATS BAR - NOW TOP POSITION -->
             <div class="stats-bar">
-                <div class="container stats-container">
-                    <div class="stat-item">
-                        <h2>40+</h2>
-                        <p>Export Countries</p>
+                <div class="container stats-grid">
+                    <div class="stat-card">
+                        <h2 class="counter" data-target="45">0</h2>
+                        <p>Export Destinations</p>
                     </div>
-                    <div class="stat-item">
-                        <h2>500k</h2>
-                        <p>Tons Annually</p>
+                    <div class="stat-card">
+                        <h2 class="counter" data-target="1500">0</h2>
+                        <p>MT Monthly Capacity</p>
                     </div>
-                    <div class="stat-item">
-                        <h2>1200</h2>
-                        <p>Expert Workers</p>
+                    <div class="stat-card">
+                        <h2 class="counter" data-target="25">0</h2>
+                        <p>Years in Industry</p>
                     </div>
-                    <div class="stat-item">
-                        <h2>100%</h2>
-                        <p>Eco Friendly</p>
+                    <div class="stat-card">
+                        <h2 class="counter" data-target="100">0</h2>
+                        <p>% Eco-Friendly</p>
                     </div>
                 </div>
             </div>
 
-            <section class="section-padding">
-                <div class="container">
-                    <div style="text-align: center; margin-bottom: 50px;">
-                        <h2 style="font-size: 2.5rem;">Featured Products</h2>
-                        <p style="color: var(--text-muted);">Explore our range of versatile jute solutions</p>
+            <section class="section-padding container">
+                <div class="about-split" style="display: flex; gap: 60px; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="https://images.unsplash.com/photo-1590736962234-45305149463c?auto=format&fit=crop&q=80&w=800" style="border-radius: 12px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" alt="Factory">
                     </div>
-                    <div class="product-grid" id="featuredGrid">
-                        <!-- Rendered via JS -->
-                    </div>
-                    <div style="text-align: center; margin-top: 50px;">
-                        <button class="btn btn-outline" onclick="navigateTo('products')">Browse All Products</button>
+                    <div style="flex: 1; text-align: left;">
+                        <h2 style="font-size: 2.8rem; margin-bottom: 25px;">Decades of Fiber Excellence</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.1rem;">We leverage three decades of expertise to process the finest raw jute into industrial-grade textiles. Our zero-plastic initiative ensures that every product we create contributes to a greener planet.</p>
+                        <ul style="list-style: none; margin-bottom: 30px;">
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;"><i data-lucide="check-circle" style="color: var(--primary);"></i> 100% Organic Material</li>
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;"><i data-lucide="check-circle" style="color: var(--primary);"></i> Global Export Standards</li>
+                            <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle" style="color: var(--primary);"></i> Customizable Solutions</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showPage('about')">Learn More About Us</button>
                     </div>
                 </div>
             </section>
-        </section>
 
-        <!-- ABOUT PAGE -->
-        <section id="page-about" class="page">
-            <div style="height: 40vh; background: #eee; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1500') center/cover;">
-                <h1 style="color: white; font-size: 3.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Our Legacy</h1>
-            </div>
-            <section class="section-padding container">
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 30px;">Driving the Green Revolution in Textiles</h2>
-                    <p style="margin-bottom: 20px;">Global Jute was established with a singular vision: to replace synthetic materials with high-performance natural fibers. Today, we operate one of the most advanced jute composite plants in the region.</p>
-                    <p>Our facility integrates state-of-the-art European machinery with traditional craftsmanship, allowing us to produce everything from raw yarn to intricate finished lifestyle products.</p>
-                </div>
-
-                <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
-                    <div style="background: white; padding: 40px; border-radius: 12px; border-bottom: 4px solid var(--primary);">
-                        <i data-lucide="target" style="color: var(--primary); margin-bottom: 20px;"></i>
-                        <h3>Our Mission</h3>
-                        <p style="font-size: 0.9rem; margin-top: 15px; color: var(--text-muted);">To innovate in sustainable manufacturing while ensuring fair trade practices for our farming partners.</p>
-                    </div>
-                    <div style="background: white; padding: 40px; border-radius: 12px; border-bottom: 4px solid var(--primary);">
-                        <i data-lucide="eye" style="color: var(--primary); margin-bottom: 20px;"></i>
-                        <h3>Our Vision</h3>
-                        <p style="font-size: 0.9rem; margin-top: 15px; color: var(--text-muted);">To become the global benchmark for carbon-neutral textile production by the year 2030.</p>
-                    </div>
-                    <div style="background: white; padding: 40px; border-radius: 12px; border-bottom: 4px solid var(--primary);">
-                        <i data-lucide="shield-check" style="color: var(--primary); margin-bottom: 20px;"></i>
-                        <h3>Quality Assurance</h3>
-                        <p style="font-size: 0.9rem; margin-top: 15px; color: var(--text-muted);">ISO 9001:2015 certified processes ensuring every yard of fabric meets international strength standards.</p>
+            <!-- CONTACT FORM - NOW AT THE BOTTOM OF HOME -->
+            <section class="section-padding" style="background-color: #f0f2ef;" id="contact-anchor">
+                <div class="container">
+                    <div class="contact-home">
+                        <h2 style="text-align: center; margin-bottom: 10px;">Direct Business Enquiry</h2>
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Request a quote or technical specifications for your bulk requirements.</p>
+                        <form id="whatsappForm">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                <div>
+                                    <label style="font-size: 0.85rem; font-weight: 600;">Full Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div>
+                                    <label style="font-size: 0.85rem; font-weight: 600;">Select Product</label>
+                                    <select id="pname" class="form-control">
+                                        <option value="Jute Bags">Jute Bags</option>
+                                        <option value="Hessian Cloth">Hessian Cloth/Fabric</option>
+                                        <option value="Jute Ropes">Jute Ropes & Twines</option>
+                                        <option value="Jute Rugs">Carpets & Rugs</option>
+                                        <option value="Others">Other Requirements</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                <div>
+                                    <label style="font-size: 0.85rem; font-weight: 600;">Quantity</label>
+                                    <input type="text" id="qty" class="form-control" placeholder="e.g. 10,000 Pcs">
+                                </div>
+                                <div>
+                                    <label style="font-size: 0.85rem; font-weight: 600;">Your Message</label>
+                                    <input type="text" id="msg" class="form-control" placeholder="Specific details...">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                                <i data-lucide="send" style="margin-right: 10px;"></i> Send Inquiry via WhatsApp
+                            </button>
+                        </form>
                     </div>
                 </div>
             </section>
         </section>
 
         <!-- PRODUCTS PAGE -->
-        <section id="page-products" class="page">
-            <div style="padding: 120px 0 60px;">
-                <div class="container">
-                    <h1 style="font-size: 3rem; margin-bottom: 10px;">Our Portfolio</h1>
-                    <p style="color: var(--text-muted);">Sustainable solutions for packaging, decor, and industry.</p>
-                    <div class="product-grid" id="fullProductGrid">
-                        <!-- Rendered via JS -->
-                    </div>
+        <section id="products" class="page">
+            <div class="section-padding container">
+                <h1 style="text-align: center; margin-bottom: 50px;">Our Premium Portfolio</h1>
+                <div class="grid" id="productGrid">
+                    <!-- JS Injected -->
                 </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page">
+            <div class="section-padding container" style="text-align: center;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 30px;">Our Heritage</h1>
+                <p style="max-width: 800px; margin: 0 auto 50px; color: var(--text-muted); font-size: 1.2rem;">
+                    Founded in 1998, we have grown to become a global cornerstone of the sustainable textile industry. Our state-of-the-art manufacturing unit in West Bengal merges traditional craftsmanship with modern technology.
+                </p>
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200" style="width: 100%; border-radius: 20px; max-height: 500px; object-fit: cover; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
             </div>
         </section>
 
         <!-- PRODUCT DETAIL PAGE -->
-        <section id="page-detail" class="page">
+        <section id="detail" class="page">
             <div class="section-padding container">
-                <button onclick="navigateTo('products')" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; margin-bottom: 30px; font-weight: 600;">
-                    <i data-lucide="arrow-left" size="18"></i> Back to Products
-                </button>
-                <div id="detailContent">
-                    <!-- Rendered via JS based on selected product -->
+                <div id="productDetail">
+                    <!-- JS Injected -->
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT PAGE -->
-        <section id="page-contact" class="page">
+        <!-- POLICY PAGES -->
+        <section id="privacy" class="page">
             <div class="section-padding container">
-                <div class="contact-grid">
-                    <div>
-                        <h1 style="font-size: 3rem; margin-bottom: 20px;">Let's Connect</h1>
-                        <p style="margin-bottom: 40px; color: var(--text-muted);">Reach out for bulk inquiries, customized specifications, or factory visits.</p>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 25px;">
-                            <div style="display: flex; gap: 15px;">
-                                <i data-lucide="map-pin" style="color: var(--primary);"></i>
-                                <div>
-                                    <h4 style="color: var(--text-dark);">Headquarters</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Industrial Estate Area, Block 4-C,<br>New Delhi, India 110001</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 15px;">
-                                <i data-lucide="phone" style="color: var(--primary);"></i>
-                                <div>
-                                    <h4 style="color: var(--text-dark);">Phone</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-muted);">+91 11 2345 6789</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 15px;">
-                                <i data-lucide="mail" style="color: var(--primary);"></i>
-                                <div>
-                                    <h4 style="color: var(--text-dark);">Email</h4>
-                                    <p style="font-size: 0.9rem; color: var(--text-muted);">export@globaljute.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
-                        <form id="contactForm" onsubmit="handleContact(event)">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div class="form-group">
-                                    <label>Full Name</label>
-                                    <input type="text" class="form-control" placeholder="John Doe" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input type="email" class="form-control" placeholder="john@company.com" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Company Name</label>
-                                <input type="text" class="form-control" placeholder="Optional">
-                            </div>
-                            <div class="form-group">
-                                <label>Requirement Type</label>
-                                <select class="form-control">
-                                    <option>Bulk Fabric</option>
-                                    <option>Custom Packaging</option>
-                                    <option>Ropes & Twines</option>
-                                    <option>Others</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea class="form-control" rows="5" placeholder="Tell us about your requirements..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%;">Send Enquiry</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Map Placeholder -->
-            <div style="height: 400px; width: 100%; background: #ddd; margin-top: 80px; filter: grayscale(1);">
-                <div style="width:100%; height:100%; display: flex; align-items: center; justify-content: center; font-style: italic; color: #888;">
-                    Interactive Map Integration Placeholder
-                </div>
+                <h1>Privacy Policy</h1>
+                <p style="margin-top: 20px; color: #555;">Your privacy is important to us. Global Jute Co. is committed to protecting your personal information. We only collect data necessary to provide our services and handle your inquiries.</p>
             </div>
         </section>
 
-        <!-- LEGAL PAGES -->
-        <section id="page-terms" class="page">
+        <section id="terms" class="page">
             <div class="section-padding container">
-                <h1 style="margin-bottom: 30px;">Terms & Conditions</h1>
-                <div style="max-width: 800px; color: var(--text-muted);">
-                    <p>Last updated: October 2023</p><br>
-                    <p>Welcome to Global Jute. By accessing this website, you agree to be bound by these terms. Our products are industrial in nature and bulk orders are subject to standard international export regulations.</p><br>
-                    <h3>Order Policy</h3>
-                    <p>All bulk orders require a minimum order quantity (MOQ) as specified in individual product quotes. Shipping costs and lead times vary based on destination and customization requirements.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="page-privacy" class="page">
-            <div class="section-padding container">
-                <h1 style="margin-bottom: 30px;">Privacy Policy</h1>
-                <div style="max-width: 800px; color: var(--text-muted);">
-                    <p>Your privacy is important to us. We only collect information necessary to process your business enquiries and improve your experience on our site.</p><br>
-                    <p>We do not sell your contact data to third parties. For any data-related queries, please contact our legal department at privacy@globaljute.com.</p>
-                </div>
+                <h1>Terms of Service</h1>
+                <p style="margin-top: 20px; color: #555;">By using our website, you agree to our terms of service. All content on this site is the property of Global Jute Co. and may not be reproduced without permission.</p>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="color: white; margin-bottom: 20px;">
+                    <div class="footer-logo">
                         <i data-lucide="leaf"></i> GLOBAL JUTE
-                    </a>
-                    <p style="margin-top: 20px; font-size: 0.9rem;">Pioneering eco-friendly textile manufacturing for over two decades. We turn natural fibers into sustainable opportunities.</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i data-lucide="facebook" size="16"></i></a>
-                        <a href="#" class="social-icon"><i data-lucide="linkedin" size="16"></i></a>
-                        <a href="#" class="social-icon"><i data-lucide="instagram" size="16"></i></a>
+                    </div>
+                    <p style="margin-bottom: 25px;">Leading the global market in premium jute textiles with a commitment to environmental sustainability and ethical manufacturing.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <i data-lucide="facebook" size="20" style="cursor: pointer;"></i>
+                        <i data-lucide="linkedin" size="20" style="cursor: pointer;"></i>
+                        <i data-lucide="twitter" size="20" style="cursor: pointer;"></i>
                     </div>
                 </div>
+                
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="navigateTo('home')">Home</a></li>
-                        <li><a href="#" onclick="navigateTo('about')">Our Story</a></li>
-                        <li><a href="#" onclick="navigateTo('products')">Products</a></li>
-                        <li><a href="#" onclick="navigateTo('contact')">Contact Us</a></li>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('products')">All Products</a></li>
+                        <li><a href="#contact-anchor">Bulk Enquiry</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="navigateTo('products')">Jute Bags</a></li>
-                        <li><a href="#" onclick="navigateTo('products')">Fabric Rolls</a></li>
-                        <li><a href="#" onclick="navigateTo('products')">Ropes & Twines</a></li>
-                        <li><a href="#" onclick="navigateTo('products')">Carpets</a></li>
+                        <li><a href="#" onclick="showPage('products')">Jute Bags</a></li>
+                        <li><a href="#" onclick="showPage('products')">Fabric Rolls</a></li>
+                        <li><a href="#" onclick="showPage('products')">Industrial Ropes</a></li>
+                        <li><a href="#" onclick="showPage('products')">Eco Rugs</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4>Policies</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="navigateTo('terms')">Terms of Service</a></li>
-                        <li><a href="#" onclick="navigateTo('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="showPage('terms')">Refund Policy</a></li>
+                        <li><a href="#" onclick="showPage('terms')">Export Compliance</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 Global Jute Textile Manufacturing Co. All Rights Reserved.</p>
+                <p>&copy; 2024 Global Jute Manufacturing Co. | Sustainable Solutions</p>
+                <p>Contact: +91 70040 29506</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // --- PRODUCT DATA ---
         const products = [
-            {
-                id: 1,
-                name: "Hessian Cloth",
-                category: "Packaging",
-                desc: "High-strength, breathable sacks ideal for coffee, cocoa, and grain storage.",
-                longDesc: "Packing / wrapping material for agricultural products (e.g. Wool, Cotton)",
-                img: "https://www.premchandjute.com/assets/img/p1.jpg",
-                specs: {
-                    "Width": "20 inches (about 50 cms) up to 140 inches (about 355 cms)",
-                    "Weight": "5 - 14 oz./sq.yd",
-                    "Packing": " in pressed and iron bound bales, or on rolls (lengths upon demand)",
-                    "Color": "Natural / Bleached",
-                    "Application": "Packing / wrapping material for agricultural products (e.g. wool, cotton)"
-                }
-            },
-            {
-                id: 2,
-                name: "Hessian Fabric Rolls",
-                category: "Textile",
-                desc: "Versatile fabric for upholstery, construction, and eco-friendly landscaping.",
-                longDesc: "Fine-weave Hessian fabric rolls available in various densities. Perfect for interior design accents, concrete curing in construction, or soil erosion control in landscaping.",
-                img: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=800",
-                specs: {
-                    "Width": "Up to 200cm",
-                    "Weight": "7oz - 14oz",
-                    "Length": "100m - 500m per roll",
-                    "Finish": "Calendered / Ironed",
-                    "Application": "Industrial & Home Decor"
-                }
-            },
-            {
-                id: 3,
-                name: "Industrial Ropes & Twines",
-                category: "Hardware",
-                desc: "Treated and untreated twines for heavy lifting and crafting requirements.",
-                longDesc: "Multi-ply jute twines engineered for high knot strength. Resistant to UV degradation, making them ideal for both maritime use and commercial gardening.",
-                img: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800",
-                specs: {
-                    "Ply": "1-ply to 5-ply",
-                    "Diameter": "1mm - 12mm",
-                    "Tensile Strength": "Up to 200kgf",
-                    "Treatment": "Polished / Unpolished",
-                    "Packaging": "Cones / Hanks / Spools"
-                }
-            },
-            {
-                id: 4,
-                name: "Handwoven Jute Carpets",
-                category: "Lifestyle",
-                desc: "Elegant, durable, and naturally textured rugs for modern sustainable homes.",
-                longDesc: "Hand-loomed by master craftsmen, our jute carpets combine the rustic charm of natural fibers with contemporary designs. Naturally anti-static and hypoallergenic.",
-                img: "https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&q=80&w=800",
-                specs: {
-                    "Weave": "Bouclé / Panelled",
-                    "Thickness": "8mm - 12mm",
-                    "Backing": "Latex / Non-slip",
-                    "Sizes": "Standard & Runners",
-                    "Durability": "High Traffic areas"
-                }
-            },
-            {
-                id: 5,
-                name: "Shopping Sacks & Totes",
-                category: "Retail",
-                desc: "Customizable, reinforced bags for retail branding and sustainable shopping.",
-                longDesc: "Heavy-duty shopping bags featuring padded handles and laminated interiors. A perfect sustainable alternative for retailers looking to reduce plastic footprints.",
-                img: "https://images.unsplash.com/photo-1621439207038-f996d96a1a1b?auto=format&fit=crop&q=80&w=800",
-                specs: {
-                    "Handle": "Padded Cotton / Cane",
-                    "Lamination": "LDPE / Biodegradable PP",
-                    "Printing": "Screen / Digital",
-                    "Load Capacity": "Up to 15kg",
-                    "Customization": "Full OEM support"
-                }
-            }
+            { id: 1, name: "Premium Jute Bags", img: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=600", desc: "Heavy-duty eco-friendly bags for agriculture.", specs: { "Material": "100% Raw Jute", "GSM": "450", "Size": "60x100cm" }},
+            { id: 2, name: "Hessian Cloth", img: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=600", desc: "Fine weave fabric for industrial usage.", specs: { "Width": "45 inches", "Weight": "7.5 oz", "Length": "100m Roll" }},
+            { id: 3, name: "Industrial Jute Ropes", img: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=600", desc: "Strong 3-ply twisted ropes for lifting.", specs: { "Ply": "3-Ply", "Thickness": "12mm", "Strength": "High" }},
+            { id: 4, name: "Handwoven Rugs", img: "https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&q=80&w=600", desc: "Natural texture rugs for modern decor.", specs: { "Design": "Boucle", "Thickness": "10mm", "Eco": "100%" }}
         ];
 
-        // --- NAVIGATION LOGIC ---
-        function navigateTo(pageId, productId = null) {
-            // Update active link in UI
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.textContent.toLowerCase() === pageId) link.classList.add('active');
-            });
-
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-
-            // Show target page
-            const targetPage = document.getElementById(`page-${pageId}`);
-            if (targetPage) {
-                targetPage.classList.add('active');
-                window.scrollTo(0, 0);
-            }
-
-            // Specific logic for product details
-            if (pageId === 'detail' && productId) {
-                renderProductDetail(productId);
-            }
-
-            // Close mobile menu if open
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-            document.getElementById('menuIcon').setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
+        // --- NAVIGATION ---
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0,0);
+            if(document.getElementById('menu').classList.contains('active')) toggleMenu();
         }
 
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
+            const menu = document.getElementById('menu');
             const icon = document.getElementById('menuIcon');
-            const isActive = navLinks.classList.toggle('active');
-            
-            icon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+            menu.classList.toggle('active');
+            const isOpen = menu.classList.contains('active');
+            icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
             lucide.createIcons();
         }
 
-        // --- RENDERING ---
-        function createProductCard(product) {
-            return `
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('${product.img}')"></div>
-                    <div class="product-info">
-                        <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--secondary); font-weight: 700;">${product.category}</span>
-                        <h3>${product.name}</h3>
-                        <p>${product.desc}</p>
-                        <button class="btn btn-outline" style="width: 100%;" onclick="navigateTo('detail', ${product.id})">View Specifications</button>
+        // --- RENDER PRODUCTS ---
+        const grid = document.getElementById('productGrid');
+        products.forEach(p => {
+            grid.innerHTML += `
+                <div class="card" onclick="viewDetail(${p.id})">
+                    <div class="card-img" style="background-image: url('${p.img}')"></div>
+                    <div class="card-content">
+                        <h3>${p.name}</h3>
+                        <p style="color: #777; font-size: 0.9rem; margin: 10px 0;">${p.desc}</p>
+                        <span style="color: var(--primary); font-weight: 600;">View Details →</span>
                     </div>
                 </div>
             `;
-        }
-
-        function renderProductDetail(id) {
-            const product = products.find(p => p.id === id);
-            const container = document.getElementById('detailContent');
-            
-            if (!product) return;
-
-            let specsHtml = '';
-            for (const [key, value] of Object.entries(product.specs)) {
-                specsHtml += `
-                    <tr>
-                        <td class="spec-label">${key}</td>
-                        <td>${value}</td>
-                    </tr>
-                `;
-            }
-
-            container.innerHTML = `
-                <div class="detail-layout">
-                    <div class="detail-img">
-                        <img src="${product.img}" alt="${product.name}">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 20px;">
-                            <div style="height: 100px; background: #eee; border-radius: 8px;"></div>
-                            <div style="height: 100px; background: #ddd; border-radius: 8px;"></div>
-                            <div style="height: 100px; background: #eee; border-radius: 8px;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">${product.category}</span>
-                        <h1 style="font-size: 3rem; margin: 10px 0 20px;">${product.name}</h1>
-                        <p style="color: var(--text-muted); font-size: 1.1rem;">${product.longDesc}</p>
-                        
-                        <table class="spec-table">
-                            ${specsHtml}
-                        </table>
-
-                        <div style="background: var(--accent); padding: 30px; border-radius: 12px; margin-top: 30px;">
-                            <h4 style="margin-bottom: 10px;">Request a Bulk Quote</h4>
-                            <p style="font-size: 0.9rem; margin-bottom: 20px;">Send us your specific dimensions and quantity requirements for a custom proposal.</p>
-                            <button class="btn btn-primary" onclick="navigateTo('contact')">Get Pricing</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            lucide.createIcons();
-        }
-
-        function handleContact(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.innerHTML = '<span style="display: flex; align-items: center; justify-content: center; gap: 10px;"><i data-lucide="loader" class="spin"></i> Sending...</span>';
-            lucide.createIcons();
-
-            // Simulate API Call
-            setTimeout(() => {
-                btn.innerHTML = 'Enquiry Sent Successfully!';
-                btn.style.background = '#4a5d4e';
-                e.target.reset();
-                setTimeout(() => {
-                    btn.innerHTML = 'Send Enquiry';
-                }, 3000);
-            }, 1500);
-        }
-
-        // --- INITIALIZATION ---
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
 
-        window.onload = () => {
-            // Initialize Icons
-            lucide.createIcons();
+        function viewDetail(id) {
+            const p = products.find(prod => prod.id === id);
+            const detailBox = document.getElementById('productDetail');
+            let rows = '';
+            for(let key in p.specs) {
+                rows += `<tr><td><strong>${key}</strong></td><td>${p.specs[key]}</td></tr>`;
+            }
 
-            // Render Grids
-            const featuredGrid = document.getElementById('featuredGrid');
-            const fullGrid = document.getElementById('fullProductGrid');
+            detailBox.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 40px;">
+                    <img src="${p.img}" style="width: 100%; border-radius: 12px; max-height: 500px; object-fit: cover;">
+                    <div class="detail-info">
+                        <h1 style="font-size: 2.5rem; margin-bottom: 15px;">${p.name}</h1>
+                        <p style="margin-bottom: 20px; color: #555;">${p.desc}</p>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">${rows}</table>
+                        <a href="#contact-anchor" class="btn btn-primary" onclick="showPage('home')">Inquire for Bulk Order</a>
+                    </div>
+                </div>
+            `;
+            showPage('detail');
+        }
+
+        // --- ANIMATED COUNTERS ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+                            const speed = target / 50;
+                            if(count < target) {
+                                counter.innerText = Math.ceil(count + speed);
+                                setTimeout(updateCount, 40);
+                            } else {
+                                counter.innerText = target + (target === 100 ? '%' : '+');
+                            }
+                        };
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-bar'));
+
+        // --- WHATSAPP REDIRECT ---
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const product = document.getElementById('pname').value;
+            const qty = document.getElementById('qty').value;
+            const msg = document.getElementById('msg').value;
             
-            // Render first 3 to featured
-            products.slice(0, 3).forEach(p => {
-                featuredGrid.innerHTML += createProductCard(p);
-            });
+            const whatsappNumber = "917004029506"; 
+            const text = `*New Business Inquiry*%0A-----------------------%0A*Name:* ${name}%0A*Product:* ${product}%0A*Quantity:* ${qty}%0A*Notes:* ${msg}`;
+            
+            const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+            window.open(url, '_blank').focus();
+        });
 
-            // Render all to full
-            products.forEach(p => {
-                fullGrid.innerHTML += createProductCard(p);
-            });
+        // Sticky Header
+        window.onscroll = function() {
+            if(window.pageYOffset > 50) document.getElementById('header').classList.add('scrolled');
+            else document.getElementById('header').classList.remove('scrolled');
         };
+
+        lucide.createIcons();
     </script>
-    <style>
-        .spin {
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
 </body>
 </html>
